@@ -1,3 +1,6 @@
+<!--
+    <meta name="google-site-verification" content="SLdaeghRsuVwR5fU9SSMvJx5QgJj3UKQB5ehQ5wOWuU" /> 
+-->
 # Fortran Practice
 
 ![Fortran](https://img.shields.io/badge/Fortran-Programming-orange?style=flat-square)
