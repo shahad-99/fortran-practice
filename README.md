@@ -34,7 +34,7 @@ gfortran program_name.f95 -o program_name
 
 ```
 fortran-practice/
-├── README.md          # This file
+├── README.md
 │── Prob-x-xx.f95
 │── Prob-x-xx.f95
 │── ...
