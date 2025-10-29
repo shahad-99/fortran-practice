@@ -19,7 +19,6 @@ program file_read_write
     open(unit=20, file=output_file, status='replace', iostat=iostat, iomsg=iomsg)
     if (iostat /= 0) then
         write (*,*) 'Error opening output file: ', trim(iomsg)
-        close(10)
         stop
     end if 
 
