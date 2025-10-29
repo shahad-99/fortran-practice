@@ -35,11 +35,9 @@ gfortran program_name.f95 -o program_name
 ```
 fortran-practice/
 ├── README.md          # This file
-├── programs/          # Directory containing Fortran programs
-│   ├── Prob-x-xx.f95
-│   ├── Prob-x-xx.f95
-│   └── ...
-└── outputs/           # Expected outputs or sample results
+│── Prob-x-xx.f95
+│── Prob-x-xx.f95
+│── ...
 ```
 
 ## 🛠️ Programs Included
