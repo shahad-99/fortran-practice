@@ -3,7 +3,7 @@ implicit none
 integer,parameter::dbl=selected_real_kind(p=12)
   real(kind=dbl) :: func 
   real(kind=dbl),intent(in)::x 
-  func=10.0_dbl * dsin(20.0_dbl*x)
+  func=10.0_dbl * dsin(20.0_dbl*x) 
 end function func
 
 subroutine deriv(func,x0,dx,rdf,error)
