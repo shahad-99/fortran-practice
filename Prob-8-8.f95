@@ -2,6 +2,7 @@ program sum_of_array_elements
     implicit none
     integer :: NROW, NCOL 
     real,dimension(:,:), allocatable :: arr 
+    real, dimension(:), allocatable :: sum_row_i, sum_col_i
     integer :: iostat, alloc_stat, i, j 
     character(len=24) :: filename
     character(len=100) :: iomsg 
@@ -25,7 +26,7 @@ program sum_of_array_elements
         ! Read how-many rows and column the array have
         read (10, *) NROW, NCOL
 
-        allocate(arr(NROW, NCOL), stat=alloc_stat)
+        allocate(arr(NROW, NCOL), sum_row_i(NROW), sum_col_i(NCOL), stat=alloc_stat)
 
         if (alloc_stat /= 0) stop 
         
@@ -34,8 +35,19 @@ program sum_of_array_elements
         end do 
     end if 
 
-    write (*,1020)  sum(arr)
-    1020 format(1x, 'Sum of the elements = ', F10.4)
+    do i = 1, NROW 
+        sum_row_i(i) = sum(arr(i,:))
+    end do 
+
+    do i = 1, NCOL
+        sum_col_i(i) = sum(arr(:,i))
+    end do 
+
+    write (*,1020)  (i, sum_row_i(i), i = 1, NROW)
+    1020 format(1x, 'Sum of the row ', i3,'  = ', F10.4)
+
+    write (*,1030)  (i, sum_col_i(i), i = 1, NCOL)
+    1030 format(1x, 'Sum of the col ', i3,'  = ', F10.4)
 
     deallocate(arr)
 
